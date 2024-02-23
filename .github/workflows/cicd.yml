@@ -47,7 +47,7 @@ jobs:
           echo "::set-output name=COVERAGE_PERCENTAGE::$COVERAGE_PERCENTAGE"
 
   oidc-login:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     needs: build
     steps:
       - name: OIDC Login to Azure Public Cloud
@@ -57,10 +57,13 @@ jobs:
           tenant-id: ${{ secrets.AZURE_TENANT_ID }}
           subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }} 
           enable-AzPSSession: true
-      - name: 'Run az commands'
-        run: |
-          az account show
-          az group list
+
+      - name: 'Get resource group with PowerShell action'
+        uses: azure/powershell@v1
+        with:
+          inlineScript: |
+            Get-AzResourceGroup
+          azPSVersion: "latest"
 
   build-and-deploy:
     runs-on: ubuntu-latest
