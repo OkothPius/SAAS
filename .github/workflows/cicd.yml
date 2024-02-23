@@ -75,7 +75,7 @@ jobs:
           azcliversion: 2.29.1
           inlineScript: |
             az configure --defaults acr=${{ secrets.AZURE_CONTAINER_REGISTRY }}
-            az acr build -t ${{ secrets.REGISTRY_URL }}/${{ env.PROJECT_NAME }}:${{ github.sha }}
+            az acr build -t ${{ secrets.REGISTRY_URL }}/${{ env.PROJECT_NAME }}:${{ github.sha }} .
 
       - name: Gets K8s context
         uses: azure/aks-set-context@v1
