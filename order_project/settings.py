@@ -13,8 +13,12 @@ AT_API_KEY = os.getenv("AT_API_KEY")
 AT_USERNAME = os.getenv("AT_USERNAME")
 AT_SHORTCODE = os.getenv("AT_SHORTCODE")
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-@br-8ivw0l0az_f_&z^7&tr=mf464d29%u8w6r1+7!ui^q04m%'
+# CICD
+PROJECT_NAME = os.getenv("PROJECT_NAME")
+CHART_PATH = os.getenv("CHART_PATH")
+CHART_OVERRIDE_PATH = os.getenv("CHART_OVERRIDE_PATH")
+
+SECRET_KEY = os.getenv("CHART_OVERRIDE_PATH")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True

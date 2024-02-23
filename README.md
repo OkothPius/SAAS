@@ -4,6 +4,8 @@ This repo contains the code that allows a customer to make an order and get an a
 
 # Requirements
 * Python (3.11.8)
+* Azure Account
+* Azure Subscription
 
 Please install the dependencies via the `requirements.txt` file using 
 ```commandline
@@ -17,6 +19,13 @@ To run the Unit Tests, from the root of the repo run
 coverage run -m pytest  -v -s
 ```
 
-If you have any questions about the project please raise an Issue on GitHub. 
+# Configuring OpenID Connect in Azure
+Ensure you have created:
+* Create an Entra ID application and a service principal.
+* Add federated credentials for the Entra ID application.
+* Create GitHub secrets for storing Azure configuration.
+
+Make sure to create your `AZURE_CREDENTIALS`, `AZURE_CLIENT_ID`, `AZURE_SUBSCRIPTION_ID`, `AZURE_TENANT_ID`, `RESOURCE_GROUP`, `CLUSTER_NAME`. `REGISTRY_URL`. and `AZURE_CONTAINER_REGISTRY` aecrets in your repository setting.
+
 
 [![Coverage Status](coverage.svg)](https://github.com/OkothPius/Order-Service)
