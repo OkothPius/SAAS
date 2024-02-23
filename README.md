@@ -27,5 +27,8 @@ Ensure you have created:
 
 Make sure to create your `AZURE_CREDENTIALS`, `AZURE_CLIENT_ID`, `AZURE_SUBSCRIPTION_ID`, `AZURE_TENANT_ID`, `RESOURCE_GROUP`, `CLUSTER_NAME`. `REGISTRY_URL`. and `AZURE_CONTAINER_REGISTRY` aecrets in your repository setting.
 
+# CICD
+![image](https://github.com/OkothPius/SAAS/assets/47280229/2edc6f9e-4d48-438a-b654-803857501deb)
+
 
 [![Coverage Status](coverage.svg)](https://github.com/OkothPius/Order-Service)
