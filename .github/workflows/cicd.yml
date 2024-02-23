@@ -71,6 +71,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+  
+      - name: Setup Dependencies
+        run: npm install @actions/core
+
       - name: Azure Login
         uses: azure/login@14a755a4e2fd6dff25794233def4f2cf3f866955
         with:
